@@ -1,0 +1,112 @@
+body {
+	background: #252525;
+}
+
+/*Верхняя линия*/
+.headline {
+	width: 100%;
+	height: 8px;
+	background: black;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.left {
+	width: 20%;
+	height: 8px;
+	background: white;
+	float: left;
+}
+
+.right {
+	width: 80%;
+	height: 8px;
+	float: left;
+}
+/*Конец Верхняя линия*/
+
+/*Меню*/
+.menu {
+	background: #000;
+	width: 20%;
+	min-height: 1500px;
+	position: fixed;
+	left: 0px;
+	top: 8px;
+	box-shadow: 1px 5px 10px red;
+}
+
+.menulogo {
+	width: 80%;
+	height: 700px;
+	background: white;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top: 25px;
+}
+
+.logo {
+	width: 100%;
+	height: 200px;
+	background: darkblue;
+}
+
+.categories {
+	width: 100%;
+	height: 400px;
+	background: darkgreen;
+	position: relative;
+	top: 70px;
+	border-top: 3px solid grey;
+}
+
+.category {
+	width: 100%;
+	height: 70px;
+	background: darkred;
+	border-bottom: 3px solid grey;
+}
+
+.category:hover {
+	border-right: 5px solid orange;
+}
+
+.social {
+	width: 100%;
+	height: 60px;
+	background: white;
+	position: relative;
+	top: 210px;
+}
+
+.copyright {
+	width: 100%;
+	height: 20px;
+	background: white;
+	position: relative;
+	top: 230px;
+}
+/*Конец Меню*/
+
+/*Баннер*/
+.banner {
+	width: 80%;
+	height: 400px;
+	background: darkorange;
+	position: relative;
+	left: 20%;
+}
+/*Конец Баннер*/
+
+/*Инорфмационный блок*/
+.info {
+	width: 80%;
+	height: 500px;
+	background: white;
+	position: relative;
+	left: 20%;
+	top: 10px;
+}
+/*Конец Информационный блок*/
