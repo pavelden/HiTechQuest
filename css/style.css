@@ -7,6 +7,11 @@ body {
 	background: #252525;
 }
 
+a {
+    text-decoration: none;
+    color: #000;
+}
+
 /*Верхняя линия*/
 .headline {
 	width: 100%;
@@ -73,21 +78,16 @@ body {
 	border-top: 3px solid grey;
 }
 
-a {
-    text-decoration: none;
-    color: #000;
-}
-
 .category {
 	width: 100%;
 	height: 50px;
 	background: darkred;
 	border-bottom: 3px solid grey;
-        font-size: 30px;
-        text-align: center;
-        padding-top: 20px;
-        font-family: hacked;
-        box-shadow: 1px 1px #252525;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 20px;
+    font-family: hacked;
+    box-shadow: 1px 1px #252525;
 }
 
 .category:hover {
@@ -101,10 +101,14 @@ a {
     pointer-events: none;
 }
 
-.category li:hover {
-    color: red;
+.category a:hover{
+    color: orange;
     padding-bottom: 2px;
     padding-top: 2px;
+}
+
+.category li a:hover {
+    color: orangered;
 }
 
 .category:hover .dropdown {
@@ -117,11 +121,6 @@ a {
 
 #dropdown:hover {
     height: 200px;
-}
-
-.active .dropdown {
-    opacity: 1;
-    pointer-events: auto;
 }
 
 .social {
@@ -170,3 +169,7 @@ a {
 	top: 20px;
 }
 /*Конец Информационный блок*/
+
+h1 {
+	color: white;
+}

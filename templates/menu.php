@@ -4,16 +4,18 @@
         <p class="underlogo">Квесты в реальности</p></a>
         <div class="categories">
             <div id="dropdown" class="category">
-                КВЕСТЫ >
-                <ul class="dropdown">
-                    <li><a href="#">Лабиринт</a></li>
-                    <li><a href="#">Роботы</a></li>
-                    <li><a href="#">Хакеры</a></li>
-                </ul>
+                <a href="?page=choose">КВЕСТЫ ></a>
+                <form method="get">
+                    <ul class="dropdown" name="myUl">
+                        <li><a href="?page=quest1">Лабиринт</a></li>
+                        <li><a href="?page=quest2">Роботы</a></li>
+                        <li><a href="?page=quest3">Хакеры</a></li>
+                    </ul>
+                </form>
             <script src="../js/dropdown.js"></script>
             </div>
-            <div class="category">БЛОГ ></div>
-            <div class="category">ОБРАТНАЯ СВЯЗЬ ></div>
+            <div class="category"><a href="?page=blog">БЛОГ ></a></div>
+            <div class="category"><a href="?page=feedback">ОБРАТНАЯ СВЯЗЬ ></a></div>
 	</div>
         <div class="social">
             <a href="http://vk.com/"><img src="img/social/vk.png"></a>
