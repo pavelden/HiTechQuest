@@ -22,4 +22,5 @@ if (isset($_SESSION['user']) && $_SESSION['user'] == 'admin') {
     /* Если админ не авторизован, вывести форму авторизации */
     echo loginForm();
 }
+// ДАННЫЕ АДМИНА: логин: admin пароль: admin
 ?>
