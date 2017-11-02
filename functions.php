@@ -41,7 +41,7 @@ function authAdmin($pdo, $login, $password) {
 }
 
 function loginForm() {
-    $form = '<form method="POST" action="admin.php">
+    $form = '<form method="POST">
             логин:<input name="login"><br>
             пароль:<input name="password"><br>
             <button>Войти</button>
@@ -50,7 +50,7 @@ function loginForm() {
 }
 
 function exitForm() {
-    $form = "<form method='POST' action='admin.php'>
+    $form = "<form method='POST'>
                 <input type='hidden' name='action' value='logout'>
                 <button>Выход</button>
                 </form>";
@@ -58,7 +58,7 @@ function exitForm() {
 }
 
 function addArticleForm() {
-    $form = "<form method='POST' action='blog.php'>
+    $form = "<form method='POST'>
         Добавить статью в блог<br>
         Заголовок статьи: <input name='title'><br>
         Текст статьи: <textarea name='textArticle'></textarea><br>
@@ -87,7 +87,7 @@ function echoAllArticles($pdo){
 }
 
 function addCommentForm($article_id){
-    $form = "<form method='POST' action='blog.php'>
+    $form = "<form method='POST'>
         Добавить комментарий<br>
         Ваше имя:<input name='name'><br>
         Комментарий:<textarea name='textComment'></textarea><br>
@@ -130,4 +130,33 @@ function sendMail($name, $email, $text){
     $message = $name . "\r\n" . $text . "\r\n" . $email;
     $send = mail($to, $subject, $message);
     var_dump($send);
+}
+
+function orderForm($quest_id){
+        $form = "<form method='POST'>
+        Заказать квест:<br>
+        Ваше имя:<input name='name'><br>
+        Ваш телефон:<input name='phone'><br>
+        <input type='hidden' name='order' value='" . $quest_id . "'>
+        <button>Заказать</button>
+        </form><br>";
+    return $form;
+}
+
+function addOrder($name, $phone, $quest_id){
+    $pdo = connectDB();
+    $query = $pdo->prepare("INSERT INTO `order` (`clientName`, `phone`, `quest_id`) VALUES (?, ?, ?)");
+    $query->execute(array($name, $phone, $quest_id));
+    
+    echo orderInfo($phone, $pdo);
+}
+
+function orderInfo($phone, $pdo){
+    $query = $pdo->prepare("SELECT order.id, order.clientName, order.phone, quest.title FROM `order` INNER JOIN `quest` ON order.quest_id = quest.id WHERE `phone`=? ORDER BY `id` DESC LIMIT 1");
+    $query->execute(array($phone));
+    $row = $query->fetch();
+    $str = "Уважаемый " . $row['clientName'] . "!<br>
+        Вы оставили заявку на квест \"" . $row['title'] . "\".<br>
+        Мы перезвоним вам по телефону " . $row['phone'] . " в ближайшее время.";
+    return $str;
 }
