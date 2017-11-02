@@ -111,3 +111,23 @@ function echoAllComments($article_id, $pdo){
         echo "Комментарий:" . $row['text'] . "<br>";
     }
 }
+
+function feedbackForm(){
+    // форма обратной связи
+        $form = "<form method='POST'>
+        Обратная связь:<br>
+        Ваше имя:<input name='name'><br>
+        Ваше e-mail:<input name='email'><br>
+        Текст:<textarea name='text'></textarea><br>
+        <button>Отправить</button>
+        </form><br>";
+        return $form;
+}
+
+function sendMail($name, $email, $text){
+    $to = 'hiteck_quest@mail.ru';
+    $subject = 'Обратная связь';
+    $message = $name . "\r\n" . $text . "\r\n" . $email;
+    $send = mail($to, $subject, $message);
+    var_dump($send);
+}
