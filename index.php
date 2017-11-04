@@ -14,5 +14,7 @@
     <?php require("templates/banner.php"); ?>
     <!--Подключение информ файла-->
     <?php require("info/main.php"); ?>
+    <!--Подключение php функционала-->
+    <?php require_once("php/functions.php"); ?>
 </body>
 </html>

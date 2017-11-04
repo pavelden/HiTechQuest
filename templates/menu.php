@@ -7,9 +7,9 @@
                 <a href="?page=choose">КВЕСТЫ ></a>
                 <form method="get">
                     <ul class="dropdown" name="myUl">
-                        <li><a href="?page=quest1">Лабиринт</a></li>
-                        <li><a href="?page=quest2">Роботы</a></li>
-                        <li><a href="?page=quest3">Хакеры</a></li>
+                        <li><a href="?page=1">Лабиринт</a></li>
+                        <li><a href="?page=2">Роботы</a></li>
+                        <li><a href="?page=3">Хакеры</a></li>
                     </ul>
                 </form>
             <script src="../js/dropdown.js"></script>

@@ -1,13 +1,13 @@
 <?php
 function changeInfo() {
     switch (@$_GET['page']) {
-        case "quest1":
+        case 1:
             $info = "quest1";
             break;
-        case "quest2":
+        case 2:
             $info = "quest2";
             break;
-        case "quest3":
+        case 3:
             $info = "quest3";
             break;
         case "choose":
@@ -18,6 +18,9 @@ function changeInfo() {
             break;
         case "feedback":
             $info = "feedback";
+            break;
+        case "admin":
+            $info = "admin";
             break;
         default:
             $info = "index";

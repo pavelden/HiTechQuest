@@ -317,4 +317,80 @@ a {
 }
 /*-Конец Выбор квестов*/
 
+/*Обратная связь*/
+.fb {
+    width: 70%;
+    height: 300px;
+    background: #252525;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    margin-top: 40px;
+}
+
+.fbleft {
+    width: 30%;
+    height: 220px;
+    float: left;
+    margin-left: 4%;
+}
+
+.fbright {
+    width: 60%;
+    height: 220px;
+    float: left;
+}
+
+.fbfields {
+    width: 68%;
+    height: 50px;
+    background: #dadada;
+    border-radius: 7px;
+    margin-left: 12.5%;
+    margin-top: 13%;
+    font-size: 25px;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    border: 0;
+}
+
+.fbfields:hover {
+    background: #fff;
+}
+
+.fbmessage {
+    width: 90%;
+    height: 150px;
+    background: #dadada;
+    border-radius: 7px;
+    margin-left: 2.5%;
+    margin-top: 6%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    border: 0;
+}
+
+.fbmessage:hover {
+    background: #fff;
+}
+
+.fbsend {
+    float: right;
+    width: 12%;
+    height: 40px;
+    border-radius: 7px;
+    background: darkred;
+    color: #fff;
+    border: 0;
+    margin-right: 8%;
+    font-size: 18px;
+}
+
+.fbsend:hover {
+    color: #000;
+    background: orange;
+}
+/*Конец Обратная связь*/
+
 /*Конец Инорфмационный блок*/
