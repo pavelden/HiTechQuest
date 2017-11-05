@@ -41,11 +41,12 @@ function authAdmin($pdo, $login, $password) {
 }
 
 function loginForm() {
-    $form = '<form method="POST">
-            логин:<input name="login"><br>
-            пароль:<input name="password"><br>
-            <button>Войти</button>
-            </form>';
+    $form = '<div class="bcontainer"><div class="post"><form method="POST">
+            <span class="bctitle">Страница авторизации</span><br><br>
+            <input class="cname" name="login" placeholder="Логин"><br><br>
+            <input class="ctextp" name="password" placeholder="Пароль"><br><br>
+            <button class="csend">Войти</button>
+            </form></div></div>';
     return $form;
 }
 
@@ -58,12 +59,12 @@ function exitForm() {
 }
 
 function addArticleForm() {
-    $form = "<form method='POST'>
-        Добавить статью в блог<br>
-        Заголовок статьи: <input name='title'><br>
-        Текст статьи: <textarea name='textArticle'></textarea><br>
-        <button>Отправить статью</button>
-        </form>";
+    $form = "<div class='bcontainer'><div class='post'><form method='POST'>
+        <span class='bctitle'>Добавить статью в блог</span><br><br>
+        <input class='cname' name='title' placeholder='Заголовок статьи'><br><br>
+        <textarea class='ctext' name='textArticle' placeholder='Текст статьи'></textarea><br><br>
+        <button class='csend'>Отправить статью</button>
+        </form></div></div>";
     return $form;
 }
 
@@ -150,13 +151,13 @@ function sendMail($name, $email, $text){
 }
 
 function orderForm($quest_id){
-        $form = "<form method='POST'>
+        $form = "<div class='orderbox'><form method='POST'>
         Заказать квест:<br>
-        Ваше имя:<input name='name'><br>
-        Ваш телефон:<input name='phone'><br>
+        <input class='oinput' name='name' placeholder='Ваше имя'><br>
+        <input class='oinput' name='phone' placeholder='Ваш телефон'><br>
         <input type='hidden' name='order' value='" . $quest_id . "'>
-        <button>Заказать</button>
-        </form><br>";
+        <button class='osend'>Заказать</button>
+        </form><br></div>";
     return $form;
 }
 
