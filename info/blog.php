@@ -1,3 +1,7 @@
+<div class="welcome">
+    <p>Блог</p>
+</div>
+
 <?php
 session_start();
 include_once './php/functions.php';

@@ -77,23 +77,34 @@ function echoAllArticles($pdo){
     $query = $pdo->prepare("SELECT * FROM `article`");
     $query->execute();
     
+    echo "<div class='bcontainer'>";
     while ($row = $query->fetch()) {
-        echo "<br>Название статьи: " . $row['title'] . "<br>";
-        echo "Текст статьи: " . $row['text'] . "<br>";
-        echo "Дата: " . $row['date'] . "<br>";
+        echo "<div class='post'>";
+        echo "<div class='article'>";
+        echo "<span class='btitle'>" . $row['title'] . "</span><br>";
+        echo "<hr>";
+        echo "<span class='btext'>" . $row['text'] . "</span><br><br>";
+        echo "<span class='bdate'>Дата: " . $row['date'] . "</span><br>";
+        echo "</div>";
+        echo "<div class='bcomments'>";
         echoAllComments($row['id'], $pdo);
+        echo "</div>";
+        echo "<div class='newcomment'>";
         echo addCommentForm($row['id']);
+        echo "</div>";
+        echo "</div>";
     }
+    echo "</div>";
 }
 
 function addCommentForm($article_id){
     $form = "<form method='POST'>
-        Добавить комментарий<br>
-        Ваше имя:<input name='name'><br>
-        Комментарий:<textarea name='textComment'></textarea><br>
-        <input type='hidden' name='article_id' value='" . $article_id . "'>
-        <button>Отправить комментарий</button>
-        </form><br>";
+        <span class='bctitle'>Добавить комментарий</span><br><br>
+        <input class='cname' name='name' placeholder='Ваше имя'><br><br>
+        <textarea class='ctext' name='textComment' placeholder='Комментарий'></textarea><br>
+        <input type='hidden' name='article_id' value='" . $article_id . "'><br>
+        <button class='csend'>Отправить комментарий</button>
+        </form>";
     return $form;
 }
 
@@ -105,11 +116,12 @@ function addComment($name, $text, $article_id, $pdo){
 function echoAllComments($article_id, $pdo){
     $query = $pdo->prepare("SELECT * FROM `comment` WHERE `article_id`=?");
     $query->execute(array($article_id));
-    echo "Комментарии:<br>";
+    echo "<span class='bctitle'>Комментарии:</span><br>";
     while ($row = $query->fetch()) {
-        echo "Имя: " . $row['commentator_name'] . "<br>";
-        echo "Комментарий:" . $row['text'] . "<br>";
+        echo "<hr><span class='bcname'>" . $row['commentator_name'] . ":</span><br>";
+        echo "<span class='bctext'>" . $row['text'] . "</span><br>";
     }
+    echo "<hr>";
 }
 
 /*
